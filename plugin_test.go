@@ -118,8 +118,8 @@ func TestValidate(t *testing.T) {
 		t.Run(tc.name, func(t *testing.T) {
 			// Setup environment variables
 			for key, val := range tc.envSetup {
-				os.Setenv(key, val)
-				defer os.Unsetenv(key)
+				_ = os.Setenv(key, val)
+				defer func(k string) { _ = os.Unsetenv(k) }(key)
 			}
 
 			p := &TeamsPlugin{}
@@ -232,8 +232,8 @@ func TestParseConfig(t *testing.T) {
 		t.Run(tc.name, func(t *testing.T) {
 			// Setup environment variables
 			for key, val := range tc.envSetup {
-				os.Setenv(key, val)
-				defer os.Unsetenv(key)
+				_ = os.Setenv(key, val)
+				defer func(k string) { _ = os.Unsetenv(k) }(key)
 			}
 
 			// Verify config values are accessible
