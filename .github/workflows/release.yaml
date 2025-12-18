@@ -56,7 +56,7 @@ jobs:
           zip teams_${{ matrix.suffix }}.zip teams_${{ matrix.suffix }}.exe
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: teams_${{ matrix.suffix }}
           path: teams_${{ matrix.suffix }}.*
