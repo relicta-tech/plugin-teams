@@ -1,6 +1,6 @@
 module github.com/relicta-tech/plugin-teams
 
-go 1.25.5
+go 1.22
 
 require (
 	github.com/relicta-tech/relicta-plugin-sdk v1.0.0
